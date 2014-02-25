@@ -11,20 +11,14 @@ import java.awt.event.ActionEvent;
 import java.io.*;
 
 public class VentanaEquipo extends JFrame {
-	//Declaro los atributos del equipo
-	private String nom = "default";
-	private int golesF = 0;
-	private int golesC = 0;
-	private int partidosG = 0;
-	private int partidosP = 0;
 	
 	private JPanel contentPane;
 	//Creo el objeto equipo
-	Equipo equipo;
+	private Equipo equipo;
 	/**
 	 * Create the frame.
 	 */
-	public VentanaEquipo() {
+	public VentanaEquipo(Equipo equipoAModificar) {
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,6 +27,8 @@ public class VentanaEquipo extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		//Creacion del equipo
+		equipo = equipoAModificar;
 		
 		JButton btnGuardarFichero = new JButton("Guardar Fichero");
 		btnGuardarFichero.addActionListener(new ActionListener() {
@@ -43,8 +39,6 @@ public class VentanaEquipo extends JFrame {
 				{
 					// abre el archivo
 					salida = new ObjectOutputStream (new FileOutputStream ("clientes.ser"));
-					// crea un registro nuevo
-					equipo = new Equipo(nom, golesF, golesC, partidosG, partidosP );
 					// envía el registro como salida
 					salida.writeObject( equipo );
 					// cierra el archivo

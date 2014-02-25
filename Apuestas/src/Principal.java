@@ -8,7 +8,8 @@ public class Principal {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VentanaEquipo frame = new VentanaEquipo();
+					Equipo equipo = new Equipo ("default",0,0,0,0);
+					VentanaEquipo frame = new VentanaEquipo(equipo);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
