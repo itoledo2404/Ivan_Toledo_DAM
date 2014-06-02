@@ -4,7 +4,7 @@ import java.awt.EventQueue;
 public class Principal {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// Abrimos la VentanaLiga
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
