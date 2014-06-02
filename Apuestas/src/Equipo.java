@@ -9,6 +9,7 @@ public class Equipo implements Serializable{
 	private int golesEnContra;
 	private int partidosGanados;
 	private int partidosPerdidos;
+	
 	//creo el constructor equipo con los parametros necesarios
 	public Equipo(String nom, int golesF, int golesC, int partidosG, int partidosP ) {
 		// TODO Auto-generated constructor stub
@@ -18,6 +19,9 @@ public class Equipo implements Serializable{
 		golesEnContra = golesC;
 		partidosGanados = partidosG;
 		partidosPerdidos = partidosP;
+	}
+	public Equipo() {
+		// TODO Auto-generated constructor stub
 	}
 	//metodo para pasar valor al attr nombreEquipo
 	public void setNombre(String nom ){

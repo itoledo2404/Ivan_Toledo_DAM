@@ -26,8 +26,7 @@ public class VentanaEquipo extends JFrame {
 	 * Create the frame.
 	 */
 	public VentanaEquipo(Equipo equipoAModificar) {
-		
-		
+		setTitle("Ventana Equipo");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 339);
 		contentPane = new JPanel();
