@@ -8,7 +8,7 @@ public class Principal {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Liga Liga = new Liga ();
+					Liga Liga = new Liga (20,"Liga Española");
 					VentanaLiga frame = new VentanaLiga(Liga);
 					frame.setVisible(true);
 				} catch (Exception e) {
