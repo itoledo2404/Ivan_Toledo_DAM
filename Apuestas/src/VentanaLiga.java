@@ -37,7 +37,7 @@ public class VentanaLiga extends JFrame {
 		
 		textField = new JTextField();
 		textField.setBounds(10, 50, 128, 20);
-		/*Añadimos la liga*/
+		/*Añadimos el nombre de la liga*/
 		textField.setText(String.valueOf(liga.getNombreLiga()));
 		contentPane.add(textField);
 		textField.setColumns(10);

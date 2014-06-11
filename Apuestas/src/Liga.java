@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Liga implements Serializable {
 	private int numEquipos;
+	/*Insertamos el ArrayList*/
 	private ArrayList<Equipo> equipos=new ArrayList<Equipo>();
 	private String  nombreLiga;
 	
@@ -19,6 +20,7 @@ public class Liga implements Serializable {
 		nombreLiga = nombre;
 		for (int i=0;i<numEquipos;i++ )
 		{
+			/*Añadimos nuestros equipos al Array List*/
 			equipos.add(new Equipo());
 		}
 		
@@ -44,13 +46,14 @@ public class Liga implements Serializable {
 	{
 		return equipos.get(posicion);
 	}
+	/*Metodo para crear un nuevo equipo*/
 	public void newEquipo()
 
 	{
 		equipos.add(new Equipo());
 		numEquipos++;
     }
-
+	/*Metodo para borrar un equipò*/
 	public void deleteEquipo(int posicion)
 
  	{

@@ -8,6 +8,7 @@ public class Principal {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					/*Añadimos una liga y sus equipos al contructorde la clase liga*/
 					Liga Liga = new Liga (20,"Liga Española");
 					VentanaLiga frame = new VentanaLiga(Liga);
 					frame.setVisible(true);
