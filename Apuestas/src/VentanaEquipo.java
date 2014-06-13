@@ -177,11 +177,11 @@ public class VentanaEquipo extends JFrame {
   			salida.writeObject(equipo); 
   			if( salida != null)
   				salida.close();
-  			System.err.println("Error al abrir el archivo.");
+  			
   		}
   		catch( IOException ioException )
  		{
- 			System.err.println("Error por excepcion.");
+  			System.err.println("Error al abrir el archivo.");
  		}
   	}
  			
