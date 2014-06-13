@@ -60,6 +60,7 @@ public class VentanaLiga extends JFrame {
 		JLabel lblNumeroDeEqipos = new JLabel("Numero de eqipos");
 		lblNumeroDeEqipos.setBounds(325, 25, 128, 14);
 		contentPane.add(lblNumeroDeEqipos);
+		JButton btnNewButton = new JButton("Modificar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				openEquipoWindow(liga.getEquipo(comboBox.getSelectedIndex()),true);

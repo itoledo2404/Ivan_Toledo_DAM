@@ -21,19 +21,25 @@ import java.awt.BorderLayout;
  import javax.swing.LayoutStyle.ComponentPlacement;
  import java.awt.event.ActionListener;
  import java.awt.event.ActionEvent;
- 
+ import java.sql.Connection;
+ import java.sql.DriverManager;
+ import java.sql.SQLException;
+
  
  public class Apuestas extends JFrame {
  
  	private JPanel contentPane;
- 	private JTextField textField;
+ 	private JTextField txtLiga;
  	private JLabel lblNewLabel;
  	private JButton btnNewButton;
  	private JButton btnNewButton_1;
  	private JButton btnSeguimientoDeApuestas;
  	private VentanaLiga frameLiga;
  	private Liga liga;
- 
+ 	private String nombreLiga;
+ 	//DB Manejador de la conexion
+    Connection conexion = null;
+
  	/**
  	 * Launch the application.
  	 */
@@ -54,8 +60,21 @@ import java.awt.BorderLayout;
  	 * Create the frame.
  	 */
  	public Apuestas() {
- 		//Creamos nueva liga
- 		liga=new Liga();
+ 		//Conectarnos a la base de datos
+ 		try{
+ 			Class.forName("com.mysql.jdbc.Driver");
+ 			// Establece la conexion con la DB
+ 			conexion = DriverManager.getConnection("jdbc:mysql://localhost/apuestas","root","ivan2404");
+ 			}catch( SQLException excepcionSql ){
+ 				excepcionSql.printStackTrace();
+ 			}// fin de catch
+ 			catch( ClassNotFoundException noEncontroClase )
+ 			{
+ 				noEncontroClase.printStackTrace();
+ 			}// fin de catch		
+ 		
+ 		//Creamos nueva liga con la conexion
+ 		liga=new Liga(conexion,nombreLiga);
  		
  		//Modifico el panel principal
  		setTitle("Administrador de Apuestas");
@@ -103,10 +122,10 @@ import java.awt.BorderLayout;
  
  		
  		
- 		textField = new JTextField();
- 		textField.setBounds(10, 52, 222, 20);
- 		panel.add(textField);
- 		textField.setColumns(10);
+ 		txtLiga = new JTextField();
+ 		txtLiga.setBounds(10, 52, 222, 20);
+ 		panel.add(txtLiga);
+ 		txtLiga.setColumns(10);
  		
  		lblNewLabel = new JLabel("Nombre de la liga");
  		lblNewLabel.setBounds(10, 27, 110, 14);
@@ -121,6 +140,7 @@ import java.awt.BorderLayout;
  		btnNewButton.setBounds(10, 97, 120, 23);
  		panel.add(btnNewButton);
  		contentPane.setLayout(gl_contentPane);
+ 		nombreLiga= txtLiga.getText();
  	}
  	/*Genero metodo para abrir ventana Liga*/
  	private void openLigaWindow(Liga liga)
