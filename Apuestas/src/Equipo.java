@@ -48,21 +48,24 @@ public class Equipo implements Serializable{
 		return golesEnContra ;
 	}
 	//metodo para pasar valor al attr partidosGanados
-	public void setGolesPartidosGanados(int partidosG){
+	public void setPartidosGanados(int partidosG){
 		partidosGanados = partidosG;
 	}
 	//metodo para devolver el valor de partidosGanados
-	public int getGolesPartidosGanado(){	
+	public int getPartidosGanado(){	
 		return partidosGanados;
 	}
 	//metodo para pasar valor al attr partidosPerdido
-	public void setGolesPartidosPerdidos(int partidosP){
+	public void setPartidosPerdidos(int partidosP){
 		partidosPerdidos = partidosP;
 	}
 	//metodo para devolver el valor de partidosPerdidos
-	public int getGolesPartidosPerdidos(){
+	public int getPartidosPerdidos(){
 		return partidosPerdidos;
 	}
-	
+	public String toString()
+	{
+		return nombreEquipo;
+	}
 }
 
