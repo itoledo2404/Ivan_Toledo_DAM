@@ -52,7 +52,7 @@ public class Equipo implements Serializable{
 		partidosGanados = partidosG;
 	}
 	//metodo para devolver el valor de partidosGanados
-	public int getPartidosGanado(){	
+	public int getPartidosGanados(){	
 		return partidosGanados;
 	}
 	//metodo para pasar valor al attr partidosPerdido

@@ -9,7 +9,7 @@ public class Liga implements Serializable {
 	
 	//creo el constructor Liga
 	public Liga() {
-		numEquipos=20;
+		numEquipos=0;
 		nombreLiga = "Liga Futbol Española";
 		
 	}
